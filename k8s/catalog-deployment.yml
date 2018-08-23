@@ -10,7 +10,7 @@ spec:
         app: catalog
     spec:
       containers:
-        - name: catalop
+        - name: catalog
           image: thegaijin/catalog
           ports:
             - containerPort: 8080
