@@ -1,12 +1,11 @@
-Microservice Kubernetes Sample
-=====================
+# Microservice Kubernetes Sample
 
 [Deutsche Anleitung zum Starten des Beispiels](WIE-LAUFEN.md)
 
 This sample is like the sample for my Microservices Book
- ([English](http://microservices-book.com/) /
- [German](http://microservices-buch.de/)) that you can find at
- https://github.com/ewolff/microservice .
+([English](http://microservices-book.com/) /
+[German](http://microservices-buch.de/)) that you can find at
+https://github.com/ewolff/microservice .
 
 However, this demo uses [Kubernetes](https://kubernetes.io/) as Docker
 environment. Kubernetes also support service discovery and load
@@ -17,21 +16,17 @@ This project creates a complete micro service demo system in Docker
 containers. The services are implemented in Java using Spring and
 Spring Cloud.
 
-
-
 It uses three microservices:
+
 - `Order` to process orders.
 - `Customer` to handle customer data.
 - `Catalog` to handle the items in the catalog.
 
-How to run
----------
+## How to run
 
 See [How to run](HOW-TO-RUN.md).
 
-
-Apache HTTP Load Balancer
-------------------------
+## Apache HTTP Load Balancer
 
 Apache HTTP is used to provide the web page of the demo at
 port 8080. It also forwards HTTP requests to the microservices. This
@@ -45,9 +40,7 @@ Kubernetes. It just uses DNS for that.
 
 Please refer to the subdirectory [microservice-kubernetes-demo/apache](microservice-kubernetes-demo/apache/) to see how this works.
 
-
-Remarks on the Code
--------------------
+## Remarks on the Code
 
 The microservices are:
 
@@ -75,3 +68,4 @@ REST services.
 
 Note that the code has no dependencies on Kubernetes. Only Spring
 Cloud Hystrix is used to add resilience.
+c
