@@ -7,7 +7,7 @@ node {
     def mvnHome = tool name:'M3', type: 'maven'
     def mvnCMD = "${mvnHome}/bin/mvn"
     sh 'cd microservice-kubernetes-demo'
-    sh "$./mvnw clean package"
+    sh "${mvnCMD} clean package"
   }
 
   stage('Build docker images') {
