@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hystrix-dashboard
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hystrix-dashboard
+    spec:
+      containers:
+        - name: hystrix-dashboard
+          image: thegaijin/hystrix-dashboard
+          ports:
+            - containerPort: 8080
