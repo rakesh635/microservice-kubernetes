@@ -68,4 +68,3 @@ REST services.
 
 Note that the code has no dependencies on Kubernetes. Only Spring
 Cloud Hystrix is used to add resilience.
-c
