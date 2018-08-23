@@ -72,7 +72,7 @@ if [ -z "$JAVA_HOME" ] ; then
   fi
 fi
 
-if [ -z "$M2_HOME" ] ; then
+if [ -z "${mvnCMD}" ] ; then
   ## resolve links - $0 may be a link to maven's home
   PRG="$0"
 
@@ -92,7 +92,7 @@ if [ -z "$M2_HOME" ] ; then
   M2_HOME=`dirname "$PRG"`/..
 
   # make it fully qualified
-  M2_HOME=`cd "$M2_HOME" && pwd`
+  M2_HOME=`cd "${mvnCMD}" && pwd`
 
   cd "$saveddir"
   # echo Using m2 at $M2_HOME
@@ -100,8 +100,8 @@ fi
 
 # For Cygwin, ensure paths are in UNIX format before anything is touched
 if $cygwin ; then
-  [ -n "$M2_HOME" ] &&
-    M2_HOME=`cygpath --unix "$M2_HOME"`
+  [ -n "${mvnCMD}" ] &&
+    M2_HOME=`cygpath --unix "${mvnCMD}"`
   [ -n "$JAVA_HOME" ] &&
     JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
   [ -n "$CLASSPATH" ] &&
@@ -110,8 +110,8 @@ fi
 
 # For Mingw, ensure paths are in UNIX format before anything is touched
 if $mingw ; then
-  [ -n "$M2_HOME" ] &&
-    M2_HOME="`(cd "$M2_HOME"; pwd)`"
+  [ -n "${mvnCMD}" ] &&
+    M2_HOME="`(cd "${mvnCMD}"; pwd)`"
   [ -n "$JAVA_HOME" ] &&
     JAVA_HOME="`(cd "$JAVA_HOME"; pwd)`"
   # TODO classpath?
@@ -208,8 +208,8 @@ MAVEN_OPTS="$(concat_lines "$MAVEN_PROJECTBASEDIR/.mvn/jvm.config") $MAVEN_OPTS"
 
 # For Cygwin, switch paths to Windows format before running java
 if $cygwin; then
-  [ -n "$M2_HOME" ] &&
-    M2_HOME=`cygpath --path --windows "$M2_HOME"`
+  [ -n "${mvnCMD}" ] &&
+    M2_HOME=`cygpath --path --windows "${mvnCMD}"`
   [ -n "$JAVA_HOME" ] &&
     JAVA_HOME=`cygpath --path --windows "$JAVA_HOME"`
   [ -n "$CLASSPATH" ] &&
@@ -223,5 +223,5 @@ WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 exec "$JAVACMD" \
   $MAVEN_OPTS \
   -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \
-  "-Dmaven.home=${M2_HOME}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
+  "-Dmaven.home=${mvnCMD}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
   ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"
