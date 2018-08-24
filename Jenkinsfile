@@ -3,10 +3,13 @@ node {
     git 'https://github.com/Thegaijin/microservice-kubernetes.git'
   }
 
-  stage('compile and package') {
+  stage('test') {
     def mvnHome = tool name:'M3', type: 'maven'
     def mvnCMD = "${mvnHome}/bin/mvn"
-    sh 'ls -la'
+    sh "${mvnCMD} clean test"
+  }
+
+  stage('compile and package') {
     sh "${mvnCMD} clean package"
   }
 
