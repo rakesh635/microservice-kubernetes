@@ -9,6 +9,6 @@ spec:
     - port: 8080
       protocol: TCP
       targetPort: 8080
-      nodePort: 33331
+      nodePort: 30003
   selector:
     app: catalog
