@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: dashboard-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
   labels:
     app: hystrix-dashboard
 spec:
@@ -9,6 +11,6 @@ spec:
     - port: 8080
       protocol: TCP
       targetPort: 8080
-      nodePort: 30005
   selector:
     app: hystrix-dashboard
+  type: NodePort

@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: apache-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
   labels:
     app: apache
 spec:
@@ -9,6 +11,6 @@ spec:
     - port: 80
       protocol: TCP
       targetPort: 80
-      nodePort: 30002
   selector:
     app: apache
+  type: NodePort
