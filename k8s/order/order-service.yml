@@ -4,13 +4,9 @@ metadata:
   name: order-service
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
-  labels:
-    app: order
 spec:
+  type: LoadBalancer
   ports:
     - port: 8080
-      protocol: TCP
-      targetPort: 8080
   selector:
     app: order
-  type: NodePort
