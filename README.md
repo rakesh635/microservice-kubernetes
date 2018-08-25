@@ -1,7 +1,5 @@
 # Microservice Kubernetes Sample
 
-[Deutsche Anleitung zum Starten des Beispiels](WIE-LAUFEN.md)
-
 This sample is like the sample for my Microservices Book
 ([English](http://microservices-book.com/) /
 [German](http://microservices-buch.de/)) that you can find at
