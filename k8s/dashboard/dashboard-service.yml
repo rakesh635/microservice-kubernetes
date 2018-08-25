@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dashboard-service
+  name: hystrix-dashboard
   labels:
     app: hystrix-dashboard
 spec:
   type: LoadBalancer
+  externalTrafficPolicy: Cluster
   ports:
     - port: 8080
       targetPort: 8080
+      nodePort: 30857
   selector:
     app: hystrix-dashboard
