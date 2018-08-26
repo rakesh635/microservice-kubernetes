@@ -1,3 +1,5 @@
+%YAML 1.2
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -14,3 +16,21 @@ spec:
           image: thegaijin/catalog
           ports:
             - containerPort: 8080
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog
+  labels:
+    app: catalog
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 31818
+  selector:
+    app: catalog
+...
