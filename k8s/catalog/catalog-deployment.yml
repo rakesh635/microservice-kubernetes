@@ -27,6 +27,6 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 31818
+      nodePort: 31817
   selector:
     app: catalog
