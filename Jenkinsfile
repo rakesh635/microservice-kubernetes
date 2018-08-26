@@ -33,6 +33,7 @@ node {
     sh 'kubectl apply -R -f ./k8s'
     sh 'pwd'
     sh 'ls -la'
+    sh 'whoami'
     sh '. /var/lib/jenkins/workspace/roservice-kubernetes_master-3J6HWCBX7U4CW4RDAEKB4QVSFBYSD5QEXCND4BTNSG6FXZIADRNA/deploy.sh'
   }
 }
