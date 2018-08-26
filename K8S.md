@@ -51,3 +51,7 @@ if you are not signed in to your dockerhub account, run
     docker login -u <dockerhub username>
 
 You will be prompted for a password, enter your docker password. After that you should be able tp push and pull images from your dockerhub account
+
+## After successful deployment
+
+Once the app has been deployed successfully, you should be able to see these pages.

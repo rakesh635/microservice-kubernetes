@@ -31,5 +31,7 @@ node {
 
   stage('deploy') {
     sh 'kubectl apply -R -f ./k8s'
+    sh 'ls -la'
+    sh '. deploy.sh'
   }
 }
