@@ -66,7 +66,7 @@ From the dashboard under services you should be able to see to external dns load
 If you click on them, you should be able to see the applications pages.
 
 Home page
-<img width="888" alt="screen shot 2018-08-25 at 19 19 34" src="https://user-images.githubusercontent.com/5388763/44629378-1e46b780-a957-11e8-9605-e8cff8650093.png">)
+<img width="888" alt="screen shot 2018-08-25 at 19 19 34" src="https://user-images.githubusercontent.com/5388763/44629378-1e46b780-a957-11e8-9605-e8cff8650093.png">
 
 Customer page
 <img width="1680" alt="screen shot 2018-08-25 at 19 21 38" src="https://user-images.githubusercontent.com/5388763/44630190-56072c80-a962-11e8-9239-3a5afd9b7484.png">
@@ -79,3 +79,6 @@ Items
 
 Find an Item
 <img width="948" alt="screen shot 2018-08-25 at 19 18 51" src="https://user-images.githubusercontent.com/5388763/44630222-ca41d000-a962-11e8-9dba-fabfd3966434.png">
+
+Hystrix Dashboard
+<img width="1677" alt="screen shot 2018-08-25 at 19 19 16" src="https://user-images.githubusercontent.com/5388763/44630358-b72fff80-a964-11e8-8fb5-e7fde98feb5c.png">
