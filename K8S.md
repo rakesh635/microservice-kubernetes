@@ -2,6 +2,9 @@
 
 In the Kubernetes folder we have 5 folders, of the 5 folders, 3 hold the deployment and service yaml files for the microservices while the other 2 have the yaml files for apache and the hysterix dashboard respectively.
 
+Visit this post to see how to setup a CI/CD pipeline with Jenkins for this project.
+https://medium.com/@Thegaijin/ci-cd-with-jenkins-docker-and-kubernetes-26932c3a1ea
+
 Each deployment file will look something like this
 
     apiVersion: extensions/v1beta1
