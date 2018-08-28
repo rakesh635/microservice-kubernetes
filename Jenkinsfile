@@ -31,14 +31,5 @@ node {
 
   stage('deploy') {
     sh 'kubectl apply -R -f ./k8s'
-    // sh 'kubectl expose deployment/apache --type="LoadBalancer" --port 80'
-    // sh 'kubectl expose deployment/catalog --type="LoadBalancer" --port 8080'
-    // sh 'kubectl expose deployment/customer --type="LoadBalancer" --port 8080'
-    // sh 'kubectl expose deployment/order --type="LoadBalancer" --port 8080'
-    // sh 'kubectl expose deployment/hystrix-dashboard --type="LoadBalancer" --port 8080'
-    // sh 'pwd'
-    // sh 'ls -la'
-    // sh 'whoami'
-    // sh '. /var/lib/jenkins/workspace/roservice-kubernetes_master-3J6HWCBX7U4CW4RDAEKB4QVSFBYSD5QEXCND4BTNSG6FXZIADRNA/deploy.sh'
   }
 }
