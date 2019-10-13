@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: hystrix-dashboard
-          image: thegaijin/dashboard
+          image: rakesh635/dashboard
           ports:
             - containerPort: 8080
 ---
