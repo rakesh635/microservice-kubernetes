@@ -1,5 +1,12 @@
 version: '2.1'
 services:
+  apache:
+    build: apache/.
+    image: rakesh635/apachedemo
+    restart: always
+    ports:
+      - 80:80
+      
   catalog:
     build: microservice-kubernetes-demo-catalog/.
     image: rakesh635/catalog
