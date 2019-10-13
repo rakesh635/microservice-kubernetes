@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: apache
-          image: thegaijin/demo-apache
+          image: rakesh635/apachedemo
           ports:
             - containerPort: 80
 ---
