@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: customer
-          image: thegaijin/customer
+          image: rakesh635/customer
           ports:
             - containerPort: 8080
 ---
