@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: order
-          image: thegaijin/order
+          image: rakesh635/order
           ports:
             - containerPort: 8080
 ---
