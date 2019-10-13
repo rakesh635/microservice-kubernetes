@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: catalog
-          image: thegaijin/catalog
+          image: rakesh635/catalog
           ports:
             - containerPort: 8080
 ---
