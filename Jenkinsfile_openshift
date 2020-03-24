@@ -1,0 +1,61 @@
+podTemplate(label: "mypod", 
+                    cloud: "openshift", 
+                    inheritFrom: "maven", 
+                    containers: [
+            containerTemplate(name: "jnlp", 
+                              image: "registry.redhat.io/openshift4/ose-jenkins-agent-maven", 
+                              resourceRequestMemory: "256Mi", 
+                              resourceLimitMemory: "256Mi", 
+                              envVars: [
+
+            ]),
+            containerTemplate(name: 'base', 
+                              image: 'alpine/git',
+                              ttyEnabled: true,
+                              command: 'cat',
+                              resourceRequestMemory: "256Mi", 
+                              resourceLimitMemory: "256Mi", 
+                              envVars: [
+            ])
+          ]) {
+          node("mypod") { 
+            //sh "git clone https://github.com/openshift/openshift-jee-sample.git ."
+            container('base') {
+              sh "git --version"
+              sh "pwd"
+            }
+            stage('checkout') {
+              sh "pwd"
+              sh "ls"
+              sh "git clone --branch master https://github.com/rakesh635/microservice-kubernetes.git ."
+            }
+            stage("Maven build") {
+              sh "mvn -B -Popenshift package"
+            }
+            stage("Openshift deploy in Test")
+            {
+              sh "oc start-build -F wildfly --from-file=target/ROOT.war -n rakesh635-test"
+            }  
+            stage("Dummy Web Regression Test")
+            {
+              sh "echo 'Dummy Web Regression Test'"
+            } 
+            stage("Dummy API Regression Test")
+            {
+              sh "echo 'Dummy API Regression Test'"
+            } 
+            stage("Dummy Desktop Test")
+            {
+              sh "echo 'Dummy Desktop Test'"
+            } 
+            stage("Dummy Performance Test")
+            {
+              sh "echo 'Dummy Performance Test'"
+            }
+            stage("Test Tagging")
+            {
+              sh "oc tag wildfly:latest wildfly:test"
+            }
+            
+          }
+        }
